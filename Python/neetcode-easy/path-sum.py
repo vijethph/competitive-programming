@@ -17,3 +17,17 @@ class Solution:
         targetSum -= root.val
 
         return self.hasPathSum(root.left, targetSum) or self.hasPathSum(root.right, targetSum)
+
+        # alternative solution
+        def dfs(node, curSum):
+            if not node:
+                return False
+            
+            curSum += node.val
+
+            if not node.left and not node.right:
+                return curSum == targetSum
+            
+            return (dfs(node.left, curSum) or dfs(node.right, curSum))
+
+        return dfs(root, 0)
