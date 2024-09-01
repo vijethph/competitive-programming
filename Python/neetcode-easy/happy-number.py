@@ -1,26 +1,20 @@
-# https://leetcode.com/problems/happy-number/description/
+# https://leetcode.com/problems/happy-number/
 
 class Solution:
     def isHappy(self, n: int) -> bool:
-        visit = set()
+        slow = self.squared(n)
+        fast = self.squared(self.squared(n))
 
-        while n not in visit:
-            visit.add(n)
-            n = self.sumOfSquares(n)
+        while slow!=fast and fast!=1:
+            slow = self.squared(slow)
+            fast = self.squared(self.squared(fast))
 
-            if n == 1:
-                return True
+        return fast==1
 
-        return False
-
-    
-    def sumOfSquares(self, n: int) -> int:
-        output = 0
-
-        while n:
-            digit = n % 10
-            digit = digit ** 2
-            output += digit 
-            n = n // 10
-        
-        return output
+    def squared(self, n):
+        result = 0
+        while n>0:
+            last = n%10
+            result += last * last
+            n = n//10
+        return result
