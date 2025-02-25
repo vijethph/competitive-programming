@@ -20,6 +20,7 @@ class Solution:
 
         second = slow.next
         prev = slow.next = None # split the list into 2 halves
+        # reverse the links in second half of the list
         while second:
             tmp = second.next
             second.next = prev
