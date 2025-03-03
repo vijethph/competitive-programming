@@ -7,22 +7,6 @@
 #         self.next = next
 class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
-        # copy all elements to array and find if it is palindrome
-        nums = []
-        while head:
-            nums.append(head.val)
-            head = head.next
-        
-        left, right = 0, len(nums) - 1
-        while left <= right:
-            if nums[left] != nums[right]:
-                return False
-            left += 1
-            right -= 1
-        
-        return True
-
-        # alternative optimized solution
         fast, slow = head, head
 
         # find middle (slow pointer)
@@ -31,7 +15,7 @@ class Solution:
             fast = fast.next
             slow = slow.next
 
-        # reverse second hald
+        # reverse second half
         prev = None
         while slow:
             temp = slow.next

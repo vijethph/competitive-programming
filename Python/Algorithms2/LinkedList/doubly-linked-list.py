@@ -4,8 +4,8 @@
 class ListNode:
     def __init__(self, val=0, prev=None, next=None):
         self.val = val
-        self.prev = None
-        self.next = None
+        self.prev = prev
+        self.next = next
 
 class LinkedList:
     def __init__(self):
