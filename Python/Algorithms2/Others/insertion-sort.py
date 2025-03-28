@@ -1,8 +1,10 @@
 # stable sorting algorithms - preserve the original ordering of elements in the case of duplicates
 # unstable sorting algorithms - may not preserve the ordering of elements in the case of duplicates
 
-# insertion sort is stable sorting algorithm - O(n^2) - iterative approach
+# insertion sort is stable sorting algorithm - iterative approach
 # divide into subproblems i.e., sort the first 2 elements, the first 3 elements and so on ...
+# time: O(n^2)
+# space: O(1)
 
 class InsertionSort:
     def insertion_sort(arr):

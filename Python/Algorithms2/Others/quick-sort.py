@@ -2,6 +2,7 @@
 # compare every other value with pivot and put it in left or right halves based on values
 # in-place unstable sort, no additional memory allocation
 # time: O(nlogn) if pivot is picked properly (first, last, middle or random)
+# space: O(n)
 
 class QuickSort:
     def quick_sort(arr, start, end):

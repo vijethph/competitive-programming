@@ -1,7 +1,7 @@
 # divide and conquer: divide problem space into 2 halves and merge the sorted halves
 
 # time: O(nlogn)
-# memory: O(n)
+# space: O(n)
 # stable sort
 
 class MergeSort:
