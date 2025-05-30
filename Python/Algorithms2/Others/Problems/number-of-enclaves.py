@@ -6,7 +6,7 @@ class Solution:
 
         # Return num of land cells
         def dfs(r, c):
-            if (r < 0 or c < 0 or not grid[r][c] or (r, c) in visit):
+            if (r < 0 or c < 0 or r == ROWS or c == COLS or not grid[r][c] or (r, c) in visit):
                 return 0
             
             visit.add((r, c))
